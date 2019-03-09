@@ -15,6 +15,25 @@ email: {
 password: {
     type: String,
     required: true
+},
+university: {
+        type: String,
+        required: true
+},
+collegeName: {
+        type: String,
+},
+faculty: {
+        type: String,
+        required: true
+},
+semester: {
+        type: String,
+        required: true
+},
+date: {
+        type: Date,
+        default: Date.now()
 }
 
 });

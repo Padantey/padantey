@@ -3,12 +3,17 @@
 //Core Node Module
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 //Imported Modules
 const users = require('./routes/api/users');
 const books = require('./routes/api/books');
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 //DB config
 const db = require('./config/keys').mongoURI;
