@@ -1,10 +1,9 @@
-'use strict';
 
 //Core Node Module
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const passport = require('passport');
 //Imported Modules
 const users = require('./routes/api/users');
 const books = require('./routes/api/books');
@@ -23,6 +22,12 @@ mongoose
     .connect(db,{useNewUrlParser:true})
     .then(() => console.log('MongoDb Connected'))
     .catch(err => console.log(err));
+
+//Passport Middleware
+app.use(passport.initialize());
+
+//Passport Config
+require('./config/passport')(passport);
 
 //Use Routes
 app.use('/api/users',users);

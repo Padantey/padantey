@@ -16,6 +16,10 @@ password: {
     type: String,
     required: true
 },
+contact: {
+        type: Number,
+        required: true
+},
 university: {
         type: String,
         required: true
@@ -28,7 +32,7 @@ faculty: {
         required: true
 },
 semester: {
-        type: String,
+        type: Number,
         required: true
 },
 date: {
