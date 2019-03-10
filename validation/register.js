@@ -50,6 +50,9 @@ module.exports = function validateRegisterInput(data){
     if(!validator.isLength(data.contact, {min: 9, max: 10})){
         errors.contact ='Contact Number must be valid nepali number';
     }
+    if(!validator.isNumeric(data.contact)){
+        errors.contact ='Contact Number must be a number';
+    }
     if(validator.isEmpty(data.contact)){
         errors.contact ='Contact Number field can not be empty';
     }

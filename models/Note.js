@@ -11,6 +11,10 @@ name : {
 author: {
     type: String
 },
+code: {
+    type: String,
+    required: true,
+},
 price: {
     type: Number,
     required: true
@@ -21,18 +25,18 @@ page: {
 },
 quality: {
     type: String,
-    required: true
+    default: 'Better'
 },
 description: {
     type: String,
     required: true
 },
 subject: [
-       {type:String, required:true},
+       {type:String, ref:'subject'},
 ],
 user: {
     type: Schema.Types.ObjectId,
-    ref: "users"
+    ref: "user"
 },
 date : {
     type: Date,
@@ -41,4 +45,4 @@ date : {
 
 });
 
-module.exports = Note = mongoose.model('note',NoteSchema)
+module.exports = Note = mongoose.model('notes',NoteSchema)

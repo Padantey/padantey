@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 //Imported Modules
 const users = require('./routes/api/users');
-const books = require('./routes/api/books');
+const notes = require('./routes/api/notes');
 
 const app = express();
 
@@ -31,7 +31,7 @@ require('./config/passport')(passport);
 
 //Use Routes
 app.use('/api/users',users);
-app.use('/api/books', books);
+app.use('/api/notes', notes);
 
 app.get('/',(req,res)=>{
     res.send('Hello');
