@@ -26,6 +26,17 @@ quality: {
 description: {
     type: String,
     required: true
+},
+subject: [
+       {type:String, required:true},
+],
+user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
+},
+date : {
+    type: Date,
+    default: Date.now
 }
 
 });
